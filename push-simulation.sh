@@ -100,7 +100,7 @@ printf "DONE\n"
 
 # Spin up conatiner group
 printf "Spinning up the container in a container group in Bluemix..."
-CONTAINER_GROUP_ID=`cf ic group create --name $CONTAINER_GROUP_NAME -p 8081 -m 256 --min 1 --max 2 --desired 1 $BMX_REGISTRY/$BMX_NAMESPACE/$APP_NAME:latest | grep id | sed 's/^.*id: //g' | sed 's/).*$//g'`
+CONTAINER_GROUP_ID=`cf ic group create --name $CONTAINER_GROUP_NAME -p 8180 -m 256 --min 1 --max 2 --desired 1 $BMX_REGISTRY/$BMX_NAMESPACE/$APP_NAME:latest | grep id | sed 's/^.*id: //g' | sed 's/).*$//g'`
 if [ $? -ne 0 ]; then
   printf "\n"
   printf "[ERROR]: An error has ocurred spinning up the container\n"
