@@ -110,7 +110,7 @@ printf "DONE\n"
 
 # Wait for the container group creation to finish
 ITERATION=0
-while [[ `cf ic group list | grep $CONTAINER_GROUP_ID | grep COMPLETED | wc -l` -ne 1 && $ITERATION -lt 10 ]]
+while [[ `cf ic group list | grep $CONTAINER_GROUP_ID | grep COMPLETE | wc -l` -ne 1 && $ITERATION -lt 10 ]]
 do
   ITERATION=$((ITERATION + 1))
   sleep 10
